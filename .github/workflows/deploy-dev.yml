@@ -15,7 +15,7 @@ jobs:
       - name: Deploy bundle to Dev
         run: |
           databricks bundle deploy --target dev
-          echo "Deployed successfully, target=dev"
+          # echo "Deployed successfully, target=dev"
         env:
           DATABRICKS_HOST: ${{ secrets.HOST_NAME }}
           DATABRICKS_TOKEN: ${{ secrets.HOST_TOKEN }}
