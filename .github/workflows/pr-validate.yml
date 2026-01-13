@@ -13,5 +13,8 @@ jobs:
       - name: Validate bundle
         run: |
           databricks bundle validate --target dev
+        env:
+          DATABRICKS_HOST: ${{ secrets.HOST_NAME }}
+          DATABRICKS_TOKEN: ${{ secrets.HOST_TOKEN }}
 
 
