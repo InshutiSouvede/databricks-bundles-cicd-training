@@ -21,6 +21,9 @@ variables:
     description: The schema to use
   run_mode:
     description: The run mode for jobs
+  target_suffix:
+    description: The target suffix to use pipeline naming
+    default: dev
 
 resources:
   jobs:
@@ -52,6 +55,8 @@ targets:
       catalog: workspace
       schema: ${workspace.current_user.short_name}
       run_mode: sample
+      target_suffix: dev
+
 
   staging:
     mode: development
@@ -61,6 +66,7 @@ targets:
       catalog: staging_catalog
       schema: staging
       run_mode: full
+      target_suffix: staging
     
   prod:
     mode: production
