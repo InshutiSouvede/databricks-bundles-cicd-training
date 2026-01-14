@@ -48,13 +48,13 @@ with this project. It's also possible to interact with it directly using the CLI
     This deploys everything that's defined for this project.
     For example, the default template would deploy a pipeline called
     `[dev yourname] databricks_bundles_cicd_training_etl` to your workspace.
-    You can find that resource by opening your workpace and clicking on **Jobs & Pipelines**.
+    You can find that resource by opening your workspace and clicking on **Jobs & Pipelines**.
 
 3. Similarly, to deploy a production copy, type:
    ```
    $ databricks bundle deploy --target prod
    ```
-   Note the default template has a includes a job that runs the pipeline every day
+   Note the default template includes a job that runs the pipeline every day
    (defined in resources/sample_job.job.yml). The schedule
    is paused when deploying in development mode (see
    https://docs.databricks.com/dev-tools/bundles/deployment-modes.html).
