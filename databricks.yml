@@ -47,7 +47,7 @@ targets:
       run_mode: sample
 
   staging:
-    mode: staging
+    mode: development
     workspace:
       host: https://dbc-ae5be35d-92f5.cloud.databricks.com
     variables:
