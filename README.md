@@ -68,3 +68,8 @@ with this project. It's also possible to interact with it directly using the CLI
    ```
    $ uv run pytest
    ```
+
+# Pre-requisites
+This project needs some secrets for Databricks configuration. Make sure you have them configured.
+    - HOST_NAME
+    - HOST_TOKEN
