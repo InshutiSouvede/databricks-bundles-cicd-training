@@ -19,6 +19,8 @@ variables:
     description: The catalog to use
   schema:
     description: The schema to use
+  run_mode:
+    description: The run mode for jobs
 
 resources:
   jobs:
@@ -42,6 +44,17 @@ targets:
     variables:
       catalog: workspace
       schema: ${workspace.current_user.short_name}
+      run_mode: sample
+
+  staging:
+    mode: staging
+    workspace:
+      host: https://dbc-ae5be35d-92f5.cloud.databricks.com
+    variables:
+      catalog: staging_catalog
+      schema: staging
+      run_mode: full
+    
   prod:
     mode: production
     workspace:

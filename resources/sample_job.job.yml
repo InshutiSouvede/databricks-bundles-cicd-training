@@ -20,6 +20,8 @@ resources:
           default: ${var.catalog}
         - name: schema
           default: ${var.schema}
+        - name: run_mode
+          default: ${var.run_mode}
 
       tasks:
         - task_key: notebook_task
