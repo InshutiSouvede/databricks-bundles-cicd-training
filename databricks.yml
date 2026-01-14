@@ -20,6 +20,15 @@ variables:
   schema:
     description: The schema to use
 
+resources:
+  jobs:
+    run_notebook:
+      name: Hello World Notebook
+      tasks:
+        - task_key: run_notebook_task
+          notebook_task:
+            notebook_path: ./my_notebook.ipynb
+
 targets:
   dev:
     # The default target uses 'mode: development' to create a development copy.

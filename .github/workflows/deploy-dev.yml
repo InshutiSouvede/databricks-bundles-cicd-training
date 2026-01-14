@@ -1,4 +1,4 @@
-name: deploy to Dev on merge to main
+name: Deploy to Dev on merge to main
 on:
   pull_request:
     branches: [ main ]
@@ -7,6 +7,9 @@ jobs:
   deploy-dev:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+    env:
+      DATABRICKS_HOST: ${{ secrets.HOST_NAME }}
+      DATABRICKS_TOKEN: ${{ secrets.HOST_TOKEN }}
     steps:
       - name: checkout code
         uses: actions/checkout@v3
@@ -18,8 +21,9 @@ jobs:
           enable-cache: true 
       - name: Deploy bundle to Dev
         run: |
-          databricks bundle deploy --target dev
+          databricks bundle deploy --target dev 
           echo "Deployed successfully, target=dev"
-        env:
-          DATABRICKS_HOST: ${{ secrets.HOST_NAME }}
-          DATABRICKS_TOKEN: ${{ secrets.HOST_TOKEN }}
+      - name: Run a databricks job
+        run: |
+          databricks bundle run run_notebook
+        
