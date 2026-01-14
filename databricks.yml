@@ -77,6 +77,7 @@ targets:
     variables:
       catalog: workspace
       schema: prod
+      run_mode: full
     permissions:
       - user_name: isouvede2@gmail.com
         level: CAN_MANAGE
