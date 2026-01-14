@@ -21,7 +21,7 @@ jobs:
           databricks bundle deploy --target staging
       - name: Run a job with staging parameters
         run: |
-          databricks bundle run  -t staging sample_job
+          databricks bundle run  -t staging run_notebook
       - name: Run same with dev parameters
         run: |
-          databricks bundle run -t dev sample_job
+          databricks bundle run -t dev run_notebook

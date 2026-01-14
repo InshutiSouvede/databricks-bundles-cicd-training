@@ -26,6 +26,13 @@ resources:
   jobs:
     run_notebook:
       name: Hello World Notebook
+      parameters:
+        - name: catalog
+          default: ${var.catalog}
+        - name: schema
+          default: ${var.schema}
+        - name: run_mode
+          default: ${var.run_mode}
       tasks:
         - task_key: run_notebook_task
           notebook_task:
