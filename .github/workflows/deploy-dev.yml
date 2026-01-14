@@ -22,7 +22,9 @@ jobs:
       - name: Deploy bundle to Dev
         run: |
           databricks bundle deploy --target dev 
-          echo "Deployed successfully, target=dev"
+      - name: Log deployed resources
+        run: |
+          echo "Deployed bundle to dev environment {{ github.run_id }}"
       - name: Run a databricks job
         run: |
           databricks bundle run run_notebook
