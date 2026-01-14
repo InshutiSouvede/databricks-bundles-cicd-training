@@ -5,7 +5,7 @@ bundle:
   uuid: 1d596630-2492-4839-8fa5-1619d3fe90fa
 
 include:
-  - resources/*.yml
+  - resources/*.yml # this means that the sample_job will be included too, thus you can use it like you do the the run_notebook job in lin 25
   - resources/*/*.yml
 
 artifacts:
