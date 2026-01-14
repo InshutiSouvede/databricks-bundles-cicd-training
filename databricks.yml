@@ -63,7 +63,7 @@ targets:
     workspace:
       host: https://dbc-ae5be35d-92f5.cloud.databricks.com
     variables:
-      catalog: staging_catalog
+      catalog: workspace
       schema: staging
       run_mode: full
       target_suffix: staging
