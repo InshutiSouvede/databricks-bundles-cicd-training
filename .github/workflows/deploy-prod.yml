@@ -25,3 +25,8 @@ jobs:
       - name: Run a job
         run: |
           databricks bundle run -t prod run_notebook
+      - name: Summary
+        run: |
+          echo "Deployed successfully, target=prod"
+          echo "Tag=${{ github.ref_name }}"
+          echo "Commit SHA=${{ github.sha }}"
